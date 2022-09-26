@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <nav>
+        <ul class="nav_1">
+            <li><img src="./images/logo.svg" alt="" id="logo"></li>
+            <li class="navbar">Collection</li>
+            <li class="navbar">Men</li>
+            <li class="navbar">Women</li>
+            <li class="navbar">About</li>
+            <li class="navbar">Contact</li>
+        </ul>
+        <ul>
+            <li><img src="./images/icon-cart.svg" alt="" id="cartList"><span id="cartNumber">1</span></li>
+            <li><img src="./images/image-avatar.png" alt=""  class="avatar"></li>
+        </ul>
+    </nav>
+    <hr>
+    <section class="mainpage">
+        <main>
+            <div>
+                <img src="./images/image-product-1.jpg" alt="" class="displayImg" id="mainImg">
+            </div>
+            <div class="slides">
+                <input type="radio" name="slide" id="1">
+                <label for="1" id="one">.<img src="./images/image-product-1-thumbnail.jpg" alt=""></label>
+              
+                <input type="radio" name="slide" id="2">
+                <label for="2" id="two">.<img src="./images/image-product-2-thumbnail.jpg" alt=""></label>
+                
+                <input type="radio" name="slide" id="3">
+                <label for="3" id="three">.<img src="./images/image-product-3-thumbnail.jpg" alt=""></label>
+                
+                <input type="radio" name="slide" id="4">
+                <label for="4" id="four">.<img src="./images/image-product-4-thumbnail.jpg" alt=""></label>
+            </div>
+        </main>
+        <article>
+            <h4>
+                SNEAKERS COMPANY
+            </h4>
+            <H1>
+                Fall Limited Edition sneakers
+            </H1>
+            <p>
+                This low profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
+            </p>
+            <h1 class="price">
+                $125.00 <span>50%</span>
+            </h1>
+            <h3>
+                $250.00
+            </h3>
+            <div class="cart_quantity">
+                <div>
+                    <span id="minus">-</span><p class="quantity">  </p><span id="add">+</span>
+                </div>
+                <button id="addToCart">
+                    <img src="./images/icon-cart.svg" alt="">Add to Cart
+                </button>
+            </div>
+        </article>
+    </section>
+    <section class="cart">
+        <h2>
+            Cart
+        </h2>
+        <hr>
+        
+        <div class="empty_cart">
+            <p>Your cart is empty</p>
+        </div>
+        <div class="checkoutList">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="" id="cartImg">
+            <p>
+                Fall Limited Edition Sneakers $<span id="costPrice">125.00</span> x <span id="amt">3</span> $<span id="total">375.00</span>
+            </p>
+            <img src="./images/icon-delete.svg" alt="" id="delete">
+        </div>
+        <button>
+            Checkout
+        </button>
+    </section>
+    <main class="pop_up">
+        <img src="./images/icon-close.svg" alt="" id="cancel">
+        <img src="./images/icon-previous.svg" id="prev" alt="" onclick="prev()">
+        <img src="./images/icon-next.svg" id="next" alt="" onclick="next()">
+        <div>
+            <img src="./images/image-product-1.jpg" alt="" class="displayImg" id="pop_up_img">
+        </div>
+        <div class="slides">
+            <input type="radio" name="slidb-e" id="b-1">
+            <label for="b-1" id="b-one">.<img src="./images/image-product-1-thumbnail.jpg" alt=""></label>
+          
+            <input type="radio" name="slidb-e" id="b-2">
+            <label for="b-2" id="b-two">.<img src="./images/image-product-2-thumbnail.jpg" alt=""></label>
+            
+            <input type="radio" name="slidb-e" id="b-3">
+            <label for="b-3" id="b-three">.<img src="./images/image-product-3-thumbnail.jpg" alt=""></label>
+            
+            <input type="radio" name="slidb-e" id="b-4">
+            <label for="b-4" id="b-four">.<img src="./images/image-product-4-thumbnail.jpg" alt=""></label>
+        </div>
+    </main>
+
+</body>
+<script src="script.js"></script>
+</html>
