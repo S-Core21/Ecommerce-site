@@ -130,6 +130,7 @@ slide4D.addEventListener('click', ()=>{
 
 clearCart.addEventListener('click', ()=>{
     cartLength.style.cssText = 'display: none'
+    cartLength.textContent = '0'
     emptyCart.style.cssText = 'display:block'
     checkOutList.style.cssText = 'display: none'
     quantity.textContent = 0
