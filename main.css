@@ -6,12 +6,20 @@
 body{
     max-width: 1440px;
     margin: auto;
+    position: relative;
+    overflow-x: hidden;
 }
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
+}
+nav div{
+    display: flex;
+}
+#menu,#close{
+    display: none;
 }
 nav ul{
     display: flex;
@@ -29,7 +37,7 @@ nav li{
 }
 .nav_1 img{
     padding-left: 2rem;
-    padding-right: 2rem;
+    padding-right: 4rem;
     margin-left: 2rem;
     border: none;
 }
@@ -83,6 +91,9 @@ main{
 .displayImg{
     width: 450px;
     border-radius: 20px;
+}
+.changing{
+    display: none;
 }
 .slides img{
     width: 90px;
@@ -213,6 +224,7 @@ h2{
 .cart .empty_cart p{
     text-align: center;
     color: gray;
+    transform: translateY(1.7rem);
 }
 .cart hr{
     width: 100%;
@@ -222,6 +234,7 @@ h2{
     padding-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
+    visibility: hidden;
 }
 .checkoutList{
     display: flex;
@@ -256,9 +269,6 @@ h2{
 #cartNumber{
     display: none;
 }
-.displayImg:active{
-    width: 500px;
-}
 .pop_up{
     position: absolute;
     top: 0;
@@ -292,8 +302,174 @@ h2{
 #cancel{
     position: absolute;
     right: 33%;
-    top: 3%;
+    top: .5%;
     width: 20px;
+}
+
+@media only screen and (max-width: 670px) {
+    nav{
+        padding-bottom: -10rem;
+        z-index: 40;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    nav img{
+        margin-bottom: -8px;
+    }
+    .navbar{
+       padding-top: -1rem;
+    }
+    .menuList{
+        display: flex;
+        height: 100vh;
+        gap: 0rem;
+        align-items: flex-start;
+        position: absolute;
+        flex-direction: column;
+        color: black;
+        background-color: #fff;
+        inset: 0 29%;
+        z-index: 40;
+        top: 0;
+        left: 0;
+        padding-top: 2rem;
+        padding-left: 3rem;
+        transform: translateX(-100%);
+        transition: 1s;
+    }
+    #menu,#close{
+        display: block;
+    }
+    #logo{
+        margin-left: 15px;
+    }
+    #menu{
+        position: absolute;
+        top: 4px;
+        left: -2rem;
+        width: 120px;
+    }
+    .menuList li{
+        padding-bottom: .7rem;
+        padding-top: .7rem;
+        font-weight: bolder;
+        font-size: 20px;
+        width: 100%;
+    }
+    .menuList img{
+        margin-bottom: 2.5rem;
+        width: 20px;
+    }
+    .navbar:hover{
+        border-right: 10px solid hsl(26, 100%, 55%);
+        border-bottom: none;
+        color: black;
+        transition: 0.2s ;
+        cursor: pointer;
+    }
+    .avatar{
+        margin-left: -30px;
+        width: 60px;
+    }
+    .slides{
+        display: none;
+    }
+    .mainpage{
+        flex-direction: column;
+        margin-top: 6.5rem;
+        padding: 0rem 2rem 2rem 2rem;
+    }
+    hr{
+        display: none;
+    }
+    .displayImg{
+        width: 90vw;
+        height: 350px;
+        border-radius: 5px;
+    }
+    .changing{
+        display: block;
+        width: 50px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 55%;
+    }
+    .changing:hover{
+        cursor: pointer;
+    }
+   
+    #phoneNext{
+        position: absolute;
+        right: 2rem;
+    }
+    #phonePrev{
+        position: absolute;
+        left: 2rem;
+    }
+    #phoneNext, #phonePrev{
+        top: 8.5rem;
+    }
+    .mainpage main{
+        width: 100%;
+    }
+    .mainpage article{
+        width: 100%;
+    }
+    .mainpage article h4{
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    .mainpage article .title{
+        font-size: 40px;
+    }
+    .mainpage article p{
+        color: gray;
+        line-height: 27px;
+        font-size: 18px;
+        word-spacing: 0;
+        margin-bottom: 1rem;
+    }
+    .price_text{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: .5rem;
+    }
+    .cart_quantity{
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    .cart_quantity div{
+        justify-content: space-between;
+        align-items: center;
+    }
+    .quantity{
+        font-size: 25px;
+        transform: translateY(8px);
+    }
+    button{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .price{
+        font-size: 23px;
+    }
+    .price span{
+        font-size: 20px;
+    }
+    .cart{
+        gap: 1.5rem;
+        width: 85%;
+        left: 0;
+        right: 0;
+        top: 7.1rem;
+        margin: auto;
+        border-radius: 5px;
+        box-shadow: none;
+    }
+    
 }
 
 

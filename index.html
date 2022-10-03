@@ -9,14 +9,20 @@
 </head>
 <body>
     <nav>
+        <div>
         <ul class="nav_1">
+            <li><img src="./images/icon-menu.svg" alt="" id="menu"></li>
             <li><img src="./images/logo.svg" alt="" id="logo"></li>
+            </ul>
+            <ul class="menuList">
+                <img src="./images/icon-close.svg" alt="" id="close">
             <li class="navbar">Collection</li>
             <li class="navbar">Men</li>
             <li class="navbar">Women</li>
             <li class="navbar">About</li>
             <li class="navbar">Contact</li>
         </ul>
+    </div>
         <ul>
             <li><img src="./images/icon-cart.svg" alt="" id="cartList"><span id="cartNumber">1</span></li>
             <li><img src="./images/image-avatar.png" alt=""  class="avatar"></li>
@@ -26,6 +32,8 @@
     <section class="mainpage">
         <main>
             <div>
+                <img src="./images/icon-next.svg" alt="" class="changing" id="phoneNext" onclick="next()">
+                <img src="./images/icon-previous.svg" alt="" class="changing" id="phonePrev" onclick="prev()">
                 <img src="./images/image-product-1.jpg" alt="" class="displayImg" id="mainImg">
             </div>
             <div class="slides">
@@ -46,18 +54,20 @@
             <h4>
                 SNEAKERS COMPANY
             </h4>
-            <H1>
+            <H1 class="title">
                 Fall Limited Edition sneakers
             </H1>
             <p>
                 This low profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
             </p>
+            <div class="price_text">
             <h1 class="price">
                 $125.00 <span>50%</span>
             </h1>
             <h3>
                 $250.00
             </h3>
+        </div>
             <div class="cart_quantity">
                 <div>
                     <span id="minus">-</span><p class="quantity">  </p><span id="add">+</span>
@@ -84,7 +94,7 @@
             </p>
             <img src="./images/icon-delete.svg" alt="" id="delete">
         </div>
-        <button>
+        <button id="cart_button">
             Checkout
         </button>
     </section>

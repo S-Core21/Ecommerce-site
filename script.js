@@ -25,7 +25,9 @@ let popUpImg = document.querySelector('#pop_up_img')
 let clearCart = document.querySelector('#delete')
 let popUp = document.querySelector('.pop_up')
 let cancelpopUp = document.querySelector('#cancel')
-
+let phoneView = window.matchMedia('(max-width: 670px)')
+let images = ['image-product-1.jpg','image-product-2.jpg','image-product-3.jpg','image-product-4.jpg']
+let i = 0;
 
 
 quantity.textContent = 0
@@ -38,9 +40,11 @@ popUp.style.display = 'none'
 checkOutList.style.display = 'none'
 
 slideshow.addEventListener('click', ()=>{
+    if(!phoneView.matches){
     popUp.style.display = 'flex'
     document.querySelector('section').style.filter = 'blur(10px)'
     document.querySelector('nav').style.filter = 'blur(10px)'
+}
 })
 
 cancelpopUp.addEventListener('click', ()=>{
@@ -53,8 +57,15 @@ addToCart.addEventListener('click', ()=>{
     if(addedToCart==false)
     cartLength.style.display = 'block'
     emptyCart.style.cssText = 'display:none'
+    document.getElementById('cart_button').style.visibility = 'visible'
     checkOutList.style.cssText = 'display: flex'
     addedToCart = true
+    if(quantity.textContent == 0 && addedToCart == true){
+        cartLength.style.display = 'none'
+        emptyCart.style.cssText = 'display:none'
+        checkOutList.style.cssText = 'display: none'
+        addedToCart = false
+    }
 })
 
 
@@ -86,6 +97,7 @@ decrease.addEventListener('click', ()=>{
         cartLength.style.cssText = 'display: none'
         emptyCart.style.cssText = 'display:block'
         checkOutList.style.cssText = 'display: none'
+        noOfProducts.textContent = 0
         addedToCart = false
     }
 })
@@ -134,45 +146,63 @@ clearCart.addEventListener('click', ()=>{
     emptyCart.style.cssText = 'display:block'
     checkOutList.style.cssText = 'display: none'
     quantity.textContent = 0
+    document.getElementById('cart_button').style.visibility = 'hidden'
     addedToCart = false
+    if (addedToCart == false){
+        cartLength.style.cssText = 'display: none'
+        noOfProducts.textContent = 0
+        document.getElementById('cart_button').style.visibility = 'hidden'
+    }
 })
 
-let nextimg = 0
 
-function next (){
-   
-    if(nextimg==0){
-        popUpImg.src = 'images/image-product-2.jpg'
-        nextimg = 1
-    }
-    else if(nextimg==1){
-        popUpImg.src = 'images/image-product-3.jpg'
-        nextimg = 2
-    }
-    else if(nextimg==2){
-        popUpImg.src = 'images/image-product-4.jpg'
-        nextimg = 3
-    }
-   
-}
+let menuOpen = document.querySelector('#menu')
+let menuClose = document.querySelector('#close')
+let menuList = document.querySelector('.menuList')
 
-let previmg = 0
+menuClose.addEventListener('click', ()=>{
+    if(phoneView.matches){
+     menuList.style.cssText = 
+     'transform: translateX(-100%); transition: .4s;'
+    }
+})
+menuOpen.addEventListener('click', ()=>{
+    if(phoneView.matches){
+     menuList.style.cssText = 
+     'transform: translateX(0); transition: .4s;'
+    }
+})
 
-function prev (){
-    if(previmg==0){
-        popUpImg.src = 'images/image-product-3.jpg'
-        previmg = 1
+window.addEventListener('scroll', ()=>{
+if(phoneView.matches){
+        document.querySelector('nav').style.cssText = 'box-shadow: 3px 3px 10px gainsboro'
     }
-    else if(previmg==1){
-        popUpImg.src = 'images/image-product-2.jpg'
-        previmg = 2
+    })
+
+
+    function prev(){
+        if(i <= 0)
+        i = images.length
+        i--
+        return setimg();
     }
-    else if(previmg==2){
-        popUpImg.src = 'images/image-product-1.jpg'
-        previmg = 3
+
+    function next(){
+        if(i >= images.length-1)
+        i = -1;
+        i++;
+        return setimg();
     }
-   
-}
+
+    function setimg(){
+        if(!phoneView.matches){
+        return popUpImg.setAttribute('src', 'images/' + images[i])
+    }else{
+        return document.querySelector('.displayImg').setAttribute('src', 'images/' + images[i])
+    }
+    }
+
+
 
 
 
