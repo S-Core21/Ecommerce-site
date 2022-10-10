@@ -309,7 +309,7 @@ h2{
 @media only screen and (max-width: 670px) {
     nav{
         padding-bottom: -10rem;
-        z-index: 40;
+        z-index: 9999;
         background-color: #fff;
         position: fixed;
         top: 0;
@@ -468,6 +468,7 @@ h2{
         margin: auto;
         border-radius: 5px;
         box-shadow: none;
+        z-index: 1;
     }
     
 }
